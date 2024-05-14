@@ -1,0 +1,103 @@
+﻿@model ELEarningSystemMVC.Models.BookingTbl
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Booking Form </title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="~/Content1/css/bootstrap.min.css" />
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/Content1/css/style.css" />
+
+</head>
+<body>
+    <div>
+
+        <div id="booking" class="section">
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <div class="form-header">
+                                <h1>Course Subscriptions</h1>
+                            </div>
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">Name</span>
+                                            <a class="form-control">@Html.TextBoxFor(m => m.name)</a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">Gender</span>
+                                            <a class="form-control">@Html.TextBoxFor(m => m.gender)</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">Email</span>
+                                            <a class="form-control">@Html.TextBoxFor(m => m.email)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+
+                                    <div class="form-group">
+                                        <span class="form-label">Phone</span>
+                                        <a class="form-control">@Html.TextBoxFor(m => m.mobile)</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-label">Category</span>
+                                    <a class="form-control">@Html.TextBoxFor(m => m.category)</a>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-label">Course Name</span>
+                                    <a class="form-control">@Html.TextBoxFor(m => m.courseName)</a>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-label">Join Date</span>
+                                    <a class="form-control" type="date">@Html.TextBoxFor(m => m.joinDate)</a>
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-label">Description</span>
+                                    <a class="form-control" >@Html.TextBoxFor(m => m.description)</a>
+                                </div>
+
+
+                                <div class="form-btn">
+                                    <input class="submit-btn" id="btnConfirm" value="Confirm Register" />
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input class="btnLogin" id="btnLogout" value="Confirm Register" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

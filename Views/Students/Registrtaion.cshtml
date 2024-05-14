@@ -1,0 +1,63 @@
+﻿@model ELEarningSystemMVC.Models.TblUser
+@{
+    ViewBag.Title = "Registrtaion";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<center>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+        <table border="3" class="tblLogin" bgcolor="Yellow" width="400px" height="250px">
+            @using (Html.BeginForm("Registration", "Home", FormMethod.Post))
+            {
+                <tr>
+                    <td colspan="2" align="center"><h2>Book Now</h2></td>
+                </tr>
+                <tr>
+                    <td align="center">First Name</td>
+                    <td align="center">@Html.TextBoxFor(m => m.firstName, "{0:#.#}")</td>
+                </tr>
+                <tr>
+                    <td align="center">lastName</td>
+                    <td align="center">@Html.TextBoxFor(m => m.lastName, "{0:#.#}")</td>
+                </tr>
+               
+                <tr>
+                    <td align="center">Email</td>
+                    <td align="center">@Html.TextBoxFor(m => m.email)</td>
+                </tr>
+                <tr>
+                    <td align="center">Mobile</td>
+                    <td align="center">@Html.TextBoxFor(m => m.mobile)</td>
+                </tr>
+
+                <tr>
+                    <td align="center">PassWord</td>
+                    <td align="center">@Html.TextBoxFor(m => m.pass)</td>
+                </tr>
+                <tr>
+                    <td align="center">Confirm Password</td>
+                    <td align="center">@Html.TextBoxFor(m => m.pass)</td>
+                </tr>
+
+
+
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" class="btn" name="btrSubmit" value="Registration" bgcolor="Green" /></td>
+                </tr>
+            }
+        </table>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </center>
+
+        </div>
+    <b>@ViewBag.saveresult</b>
+    </center>
+

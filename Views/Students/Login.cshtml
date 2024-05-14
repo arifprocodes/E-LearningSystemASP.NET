@@ -1,0 +1,38 @@
+﻿@model ELEarningSystemMVC.Models.TblUser
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<center>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <table class="tblLogin">
+
+        <tr>
+            <td colasp="2" align="center"><h2>Sign In</h2></td>
+        </tr>
+       
+        <tr>
+            <td>Username</td>
+            <td>@Html.TextBoxFor(m=>m.email)</td>
+        </tr><br/><br/>
+        <tr>
+            <td>Password</td>
+            <td>@Html.TextBoxFor(m => m.pass)</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="Submit" id="btnLogin"  value="Login" />
+            </td>
+        </tr>
+    </table>'
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</center>
+

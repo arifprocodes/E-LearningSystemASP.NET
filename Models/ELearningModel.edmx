@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ELearningModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ELEARNINGSYSTEMMVC\ELEARNINGSYSTEMMVC\APP_DATA\ELEARNING.MDF.dbo.BookingTbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BookingTbl">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="gender" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="mobile" />
+            <PropertyRef Name="category" />
+            <PropertyRef Name="courseName" />
+            <PropertyRef Name="joinDate" />
+            <PropertyRef Name="description" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="mobile" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="category" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="courseName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="joinDate" Type="datetime" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ELEARNINGSYSTEMMVC\ELEARNINGSYSTEMMVC\APP_DATA\ELEARNING.MDF.dbo.TblFeedback' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblFeedback">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="mail" />
+            <PropertyRef Name="subjects" />
+            <PropertyRef Name="messages" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="subjects" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="messages" Type="nvarchar" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ELEARNINGSYSTEMMVC\ELEARNINGSYSTEMMVC\APP_DATA\ELEARNING.MDF.dbo.TblUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="mobile" />
+            <PropertyRef Name="pass" />
+          </Key>
+          <Property Name="firstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="mobile" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pass" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ELearningModelStoreContainer">
+          <EntitySet Name="BookingTbl" EntityType="Self.BookingTbl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[BookingTbl].[name] AS [name], 
+[BookingTbl].[gender] AS [gender], 
+[BookingTbl].[email] AS [email], 
+[BookingTbl].[mobile] AS [mobile], 
+[BookingTbl].[category] AS [category], 
+[BookingTbl].[courseName] AS [courseName], 
+[BookingTbl].[joinDate] AS [joinDate], 
+[BookingTbl].[description] AS [description]
+FROM [dbo].[BookingTbl] AS [BookingTbl]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblFeedback" EntityType="Self.TblFeedback" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[TblFeedback].[name] AS [name], 
+[TblFeedback].[mail] AS [mail], 
+[TblFeedback].[subjects] AS [subjects], 
+[TblFeedback].[messages] AS [messages]
+FROM [dbo].[TblFeedback] AS [TblFeedback]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[TblUser].[firstName] AS [firstName], 
+[TblUser].[lastName] AS [lastName], 
+[TblUser].[email] AS [email], 
+[TblUser].[mobile] AS [mobile], 
+[TblUser].[pass] AS [pass]
+FROM [dbo].[TblUser] AS [TblUser]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ELearningModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BookingTbl">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="gender" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="mobile" />
+            <PropertyRef Name="category" />
+            <PropertyRef Name="courseName" />
+            <PropertyRef Name="joinDate" />
+            <PropertyRef Name="description" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="courseName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="joinDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblFeedback">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="mail" />
+            <PropertyRef Name="subjects" />
+            <PropertyRef Name="messages" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="subjects" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="messages" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="mobile" />
+            <PropertyRef Name="pass" />
+          </Key>
+          <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ELearningEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookingTbls" EntityType="Self.BookingTbl" />
+          <EntitySet Name="TblFeedbacks" EntityType="Self.TblFeedback" />
+          <EntitySet Name="TblUsers" EntityType="Self.TblUser" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ELearningModelStoreContainer" CdmEntityContainer="ELearningEntities">
+          <EntitySetMapping Name="BookingTbls">
+            <EntityTypeMapping TypeName="ELearningModel.BookingTbl">
+              <MappingFragment StoreEntitySet="BookingTbl">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblFeedbacks">
+            <EntityTypeMapping TypeName="ELearningModel.TblFeedback">
+              <MappingFragment StoreEntitySet="TblFeedback">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="subjects" ColumnName="subjects" />
+                <ScalarProperty Name="messages" ColumnName="messages" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUsers">
+            <EntityTypeMapping TypeName="ELearningModel.TblUser">
+              <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ELearningModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ELEARNINGSYSTEMMVC\ELEARNINGSYSTEMMVC\APP_DATA\ELEARNING.MDF.dbo.BookingTbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BookingTbl">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="gender" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="mobile" />
+      <PropertyRef Name="category" />
+      <PropertyRef Name="courseName" />
+      <PropertyRef Name="joinDate" />
+      <PropertyRef Name="description" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="mobile" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="category" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="courseName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="joinDate" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ELEARNINGSYSTEMMVC\ELEARNINGSYSTEMMVC\APP_DATA\ELEARNING.MDF.dbo.TblFeedback' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblFeedback">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="mail" />
+      <PropertyRef Name="subjects" />
+      <PropertyRef Name="messages" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="subjects" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="messages" Type="nvarchar" MaxLength="120" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ELEARNINGSYSTEMMVC\ELEARNINGSYSTEMMVC\APP_DATA\ELEARNING.MDF.dbo.TblUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="firstName" />
+      <PropertyRef Name="lastName" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="mobile" />
+      <PropertyRef Name="pass" />
+    </Key>
+    <Property Name="firstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="mobile" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="pass" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ELearningModelStoreContainer">
+    <EntitySet Name="BookingTbl" EntityType="Self.BookingTbl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[BookingTbl].[name] AS [name], 
+[BookingTbl].[gender] AS [gender], 
+[BookingTbl].[email] AS [email], 
+[BookingTbl].[mobile] AS [mobile], 
+[BookingTbl].[category] AS [category], 
+[BookingTbl].[courseName] AS [courseName], 
+[BookingTbl].[joinDate] AS [joinDate], 
+[BookingTbl].[description] AS [description]
+FROM [dbo].[BookingTbl] AS [BookingTbl]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblFeedback" EntityType="Self.TblFeedback" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblFeedback].[name] AS [name], 
+[TblFeedback].[mail] AS [mail], 
+[TblFeedback].[subjects] AS [subjects], 
+[TblFeedback].[messages] AS [messages]
+FROM [dbo].[TblFeedback] AS [TblFeedback]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblUser" EntityType="Self.TblUser" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblUser].[firstName] AS [firstName], 
+[TblUser].[lastName] AS [lastName], 
+[TblUser].[email] AS [email], 
+[TblUser].[mobile] AS [mobile], 
+[TblUser].[pass] AS [pass]
+FROM [dbo].[TblUser] AS [TblUser]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
